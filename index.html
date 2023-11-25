@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>タイトル</title>
+</head>
+
+<body>
+	<div id="wrapper">
+		<div id="header">
+			ヘッダー部分
+		</div>
+		<div id="main">
+			<input type="button" value="button" onclick="lordJson();" />
+		</div>
+		<div id="footer">
+			フッター部分
+		</div>
+	</div>
+	<script>
+
+		async function lordJson() {
+
+			const response = await fetch("./maps_api_result.json");
+			const mapdata = await response.json();
+
+			alert(mapdata.results[0].name);
+		}
+
+	</script>
+
+</html>
